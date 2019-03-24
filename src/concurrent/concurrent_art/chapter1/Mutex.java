@@ -1,4 +1,4 @@
-package current_art.chapter1;
+package concurrent.concurrent_art.chapter1;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
@@ -6,22 +6,22 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
 public class Mutex implements Lock {
-    private static class Sync extends AbstractQueuedSynchronizer{
+    private static class Sync extends AbstractQueuedSynchronizer {
         @Override
-        protected boolean isHeldExclusively(){
+        protected boolean isHeldExclusively() {
             return getState() == 1;
         }
 
         @Override
-        public boolean tryAcquire(int acquires){
-            if(compareAndSetState(0,1)){
+        public boolean tryAcquire(int acquires) {
+            if (compareAndSetState(0, 1)) {
                 setExclusiveOwnerThread(Thread.currentThread());
             }
             return true;
         }
 
-        protected boolean tryRelase(int releases){
-            if(getState()==0) {
+        protected boolean tryRelase(int releases) {
+            if (getState() == 0) {
                 throw new IllegalMonitorStateException();
             }
             setExclusiveOwnerThread(null);
@@ -29,7 +29,7 @@ public class Mutex implements Lock {
             return true;
         }
 
-        Condition newCondition(){
+        Condition newCondition() {
             return new ConditionObject();
         }
     }
@@ -54,7 +54,7 @@ public class Mutex implements Lock {
 
     @Override
     public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
-        return sync.tryAcquireNanos(1,unit.toNanos(time));
+        return sync.tryAcquireNanos(1, unit.toNanos(time));
     }
 
     @Override
@@ -67,11 +67,11 @@ public class Mutex implements Lock {
         return sync.newCondition();
     }
 
-    public boolean isLocked(){
+    public boolean isLocked() {
         return sync.isHeldExclusively();
     }
 
-    public boolean hasQueuedThreads(){
+    public boolean hasQueuedThreads() {
         return sync.hasQueuedThreads();
     }
 }

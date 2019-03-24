@@ -1,7 +1,7 @@
-package program_logic.chapter15;
+package concurrent.program_logic.chapter15;
 
 public class VisibilityDemo {
-    private static boolean shutdown = false;
+    private static volatile boolean shutdown = false;
 
     static class HelloThread extends Thread {
         @Override
