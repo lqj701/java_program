@@ -1,4 +1,4 @@
-package concurrent.program_logic.chapter15;
+package concurrent.program_logic.chapter15.synchronized_usage;
 
 public class UnSyncCounterThread extends Thread {
     private static volatile int counter = 0;

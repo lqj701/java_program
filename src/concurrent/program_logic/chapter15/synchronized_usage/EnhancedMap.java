@@ -1,4 +1,4 @@
-package concurrent.program_logic.chapter15;
+package concurrent.program_logic.chapter15.synchronized_usage;
 
 import java.util.Collections;
 import java.util.Map;

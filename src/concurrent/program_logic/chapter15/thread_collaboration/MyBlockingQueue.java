@@ -1,4 +1,4 @@
-package concurrent.program_logic.chapter15;
+package concurrent.program_logic.chapter15.thread_collaboration;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

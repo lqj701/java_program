@@ -1,11 +1,11 @@
-package concurrent.program_logic.chapter15;
+package concurrent.program_logic.chapter15.synchronized_usage;
 
 public class SyncCountThread implements Runnable {
 
     private static int counter = 0;
 
     @Override
-    public synchronized void run() {
+    public void run() {
         for (int i = 0; i < 1000; i++) {
             counter++;
         }

@@ -1,4 +1,4 @@
-package concurrent.program_logic.chapter15;
+package concurrent.program_logic.chapter15.synchronized_usage;
 
 public class DeadLockDemo {
     private static Object lockA = new Object();

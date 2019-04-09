@@ -1,4 +1,4 @@
-package concurrent.program_logic.chapter15;
+package concurrent.program_logic.chapter15.synchronized_usage;
 
 public class VisibilityDemo {
     private static volatile boolean shutdown = false;
@@ -10,8 +10,8 @@ public class VisibilityDemo {
 
             }
             System.out.println("exit hello");
-        }
 
+        }
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -20,5 +20,4 @@ public class VisibilityDemo {
         shutdown = true;
         System.out.println("exit main");
     }
-
 }

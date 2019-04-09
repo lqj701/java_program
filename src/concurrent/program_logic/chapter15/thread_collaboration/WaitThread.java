@@ -1,4 +1,4 @@
-package concurrent.program_logic.chapter15;
+package concurrent.program_logic.chapter15.thread_collaboration;
 
 public class WaitThread extends Thread {
     private volatile boolean fire = false;
