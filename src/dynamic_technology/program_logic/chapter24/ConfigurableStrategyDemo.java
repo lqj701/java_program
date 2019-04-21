@@ -7,7 +7,7 @@ public class ConfigurableStrategyDemo {
     public static IService createService() {
         try {
             Properties prop = new Properties();
-            String fileName = "d:/study/java_program/src/dynamic_technology/chapter24/config.properties";
+            String fileName = "D:\\study\\java_program\\src\\dynamic_technology\\program_logic\\chapter24\\config.properties";
             prop.load(new FileInputStream(fileName));
             String className = prop.getProperty("service");
             Class<?> cls = Class.forName(className);
