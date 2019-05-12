@@ -10,6 +10,7 @@ import org.springframework.cglib.proxy.MethodProxy;
 
 import dynamic_technology.program_logic.chapter22.SimpleInject;
 
+//此类相当于织入器
 public class CGLibContainer {
     public static enum InterceptPoint {
         BEFORE, AFTER, EXCEPTION
