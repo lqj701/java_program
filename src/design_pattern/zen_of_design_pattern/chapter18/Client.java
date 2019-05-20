@@ -2,7 +2,9 @@ package design_pattern.zen_of_design_pattern.chapter18;
 
 import java.util.Arrays;
 
-// 策略模式
+/**
+ * strategy pattern
+ */
 public class Client {
     public final static String ADD_SYMBOL = "+";
     public final static String SUB_SYMBOL = "-";

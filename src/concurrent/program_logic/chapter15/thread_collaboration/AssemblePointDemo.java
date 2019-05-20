@@ -13,7 +13,7 @@ public class AssemblePointDemo {
             try {
                 Thread.sleep((int) (Math.random() * 1000));
                 ap.await();
-                System.out.println("arrived");
+                System.out.println("arrived at " + System.currentTimeMillis());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
