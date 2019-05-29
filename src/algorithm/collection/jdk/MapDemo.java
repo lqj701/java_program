@@ -1,4 +1,4 @@
-package algorithm.Collection;
+package algorithm.collection.jdk;
 
 import com.alibaba.fastjson.JSONObject;
 

@@ -8,7 +8,9 @@ public class SortDemo {
     public static void main(String[] args) {
         SortService sortService = new SortServiceImpl();
         // sortService.bubbleSort(array);
-        sortService.quickSort(array, 0, array.length - 1);
+        // sortService.quickSort(array, 0, array.length - 1);
+        // sortService.insertionSort(array);
+        sortService.binaryInsertionSort(array);
         System.out.println(JSONObject.toJSONString(array));
     }
 }

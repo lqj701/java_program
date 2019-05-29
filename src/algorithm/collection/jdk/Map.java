@@ -1,4 +1,4 @@
-package algorithm.Collection;
+package algorithm.collection.jdk;
 
 import java.util.Collection;
 import java.util.Set;

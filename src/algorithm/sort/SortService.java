@@ -10,6 +10,8 @@ public interface SortService {
     // insert sort
     void insertionSort(int[] array);
 
+    void binaryInsertionSort(int[] array);
+
     // Shell sort
     void shellSort(int[] array);
 

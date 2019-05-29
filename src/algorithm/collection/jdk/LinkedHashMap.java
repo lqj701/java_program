@@ -1,4 +1,4 @@
-package algorithm.Collection;
+package algorithm.collection.jdk;
 
 public class LinkedHashMap<K, V> extends HashMap<K, V> implements Map<K, V> {
     static class Entry<K, V> extends HashMap.Node<K, V> {

@@ -1,4 +1,4 @@
-package algorithm.Collection;
+package algorithm.collection.jdk;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

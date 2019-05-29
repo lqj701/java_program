@@ -114,16 +114,7 @@ public class CGLibContainer {
         }
     }
 
-    private static <T> T createInstance(Class<T> cls) throws IllegalAccessException, InstantiationException {
-        if (!interceptMethodsMap.containsKey(cls)) {
-            return cls.newInstance();
-        }
-        Enhancer enhancer = new Enhancer();
-        enhancer.setSuperclass(cls);
-        enhancer.setCallback(new AspectInterceptor());
-        return (T) enhancer.create();
-    }
-
+    // 获取代理对象的方法
     public static <T> T getInstance(Class<T> cls) {
         try {
             T obj = createInstance(cls);
@@ -141,5 +132,15 @@ public class CGLibContainer {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static <T> T createInstance(Class<T> cls) throws IllegalAccessException, InstantiationException {
+        if (!interceptMethodsMap.containsKey(cls)) {
+            return cls.newInstance();
+        }
+        Enhancer enhancer = new Enhancer();
+        enhancer.setSuperclass(cls);
+        enhancer.setCallback(new AspectInterceptor());
+        return (T) enhancer.create();
     }
 }
