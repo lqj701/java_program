@@ -1,6 +1,6 @@
 package design_pattern.zen_of_design_pattern.chapter23;
 
-// 门面模式
+// facade pattern
 public class Client {
     public static void main(String[] args) {
         ModernPostOffice hellRoadPostOffice = new ModernPostOffice();

@@ -3,6 +3,9 @@ package design_pattern.zen_of_design_pattern.chapter16;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * responsibility chain pattern
+ */
 public class Client {
     public static void main(String[] args) {
         Random rand = new Random();

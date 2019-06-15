@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * template design pattern
+ */
 public class Client {
     public static void main(String[] args) throws IOException {
         System.out.println("------------H1型号悍马------------");
