@@ -60,14 +60,9 @@ public class SortServiceImpl implements SortService {
     public void insertionSort(int[] array) {
         for (int cur = 1; cur < array.length; cur++) {
             int key = array[cur];
-            int index = cur - 1;
-            while (index >= 0) {
-                if (array[index] > key) {
-                    array[index + 1] = array[index];
-                    index--;
-                } else {
-                    break;
-                }
+            int index;
+            for (index = cur - 1; index >= 0 && array[index] > key; index--) {
+                array[index + 1] = array[index];
             }
             // index represent the insert position,the key insert after this position
             array[index + 1] = key;
@@ -81,7 +76,6 @@ public class SortServiceImpl implements SortService {
     @Override
     public void binaryInsertionSort(int[] array) {
         SearchService searchService = new SearchServiceImpl();
-
         for (int cur = 1; cur < array.length; cur++) {
             int key = array[cur];
             int index = searchService.binarySearchForInsertSort(Arrays.copyOfRange(array, 0, cur), key);
@@ -94,16 +88,43 @@ public class SortServiceImpl implements SortService {
 
     @Override
     public void shellSort(int[] array) {
-
+        for (int gap = array.length / 2; gap > 0; gap /= 2) {
+            // divide into (gap) groups,than sort each group by insertion sort method
+            for (int i = 0; i < gap; i++) {
+                for (int cur = i + gap; cur < array.length; cur += gap) {
+                    int key = array[cur];
+                    int index;
+                    for (index = cur - gap; index >= 0 && array[index] > key; index -= gap) {
+                        array[index + gap] = array[index];
+                    }
+                    array[index + gap] = key;
+                }
+            }
+        }
     }
 
     @Override
     public void selectionSort(int[] array) {
-
+        for (int i = 0; i < array.length; i++) {
+            int key = array[i];
+            int index = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < key) {
+                    key = array[j];
+                    index = j;
+                }
+            }
+            array[index] = array[i];
+            array[i] = key;
+        }
     }
 
     @Override
     public void heapSort(int[] array) {
+
+    }
+
+    private int[] buildMaxHeap(int[] array) {
 
     }
 

@@ -10,7 +10,9 @@ public class SortDemo {
         // sortService.bubbleSort(array);
         // sortService.quickSort(array, 0, array.length - 1);
         // sortService.insertionSort(array);
-        sortService.binaryInsertionSort(array);
+        // sortService.binaryInsertionSort(array);
+        // sortService.shellSort(array);
+        sortService.selectionSort(array);
         System.out.println(JSONObject.toJSONString(array));
     }
 }
