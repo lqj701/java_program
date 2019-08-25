@@ -3,6 +3,9 @@ package design_pattern.zen_of_design_pattern.chapter20;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/**
+ * iterator design pattern
+ */
 public class Boss {
     public static void main(String[] args) {
         IProject project = new Project();
