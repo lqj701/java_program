@@ -124,9 +124,9 @@ public class SortServiceImpl implements SortService {
 
     }
 
-    private int[] buildMaxHeap(int[] array) {
-
-    }
+    // private int[] buildMaxHeap(int[] array) {
+    // return 1;
+    // }
 
     @Override
     public void mergeSort(int[] array) {
